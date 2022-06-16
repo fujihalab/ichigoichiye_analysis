@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# usage: $ python3 analyze1518.py ./output/phase-1/*/bluetooth.log
+# usage: $ python3 analyze1518.py ./output/phase-*/*/bluetooth.log
 import sys
 import json
 import datetime
@@ -56,7 +56,8 @@ for infilename in infilenames_list:
   for k, v in contacts_counter.items():
     if v == 1:
       number1518 += 1
-  if total_number >= 10:
+#  if total_number >= 10:
+  if total_number >= 100:
     #print('rate1518:', infilename, float(number1518)/total_number, number1518, total_number)
     print('rate1518:', float(number1518)/total_number, number1518, total_number)
     rate1518_list.append( float(number1518)/total_number )
